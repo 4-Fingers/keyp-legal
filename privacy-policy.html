@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keyp Privacy Notice</title>
+<style>
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;color:#1b1f27;background:#fff;margin:0;padding:0 16px}
+  main{max-width:760px;margin:0 auto;padding:24px 0 48px}
+  h1{font-size:1.8rem;margin:0 0 4px}
+  h2{font-size:1.25rem;margin:32px 0 8px;padding-top:8px;border-top:1px solid #e3e6ec}
+  h3{font-size:1.05rem;margin:20px 0 4px}
+  p,li{font-size:1rem}
+  ul{padding-left:1.2rem}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95rem}
+  th,td{border:1px solid #d5d9e0;padding:8px;text-align:left;vertical-align:top}
+  th{background:#f3f4f7}
+  .meta{color:#555d6b;font-size:.95rem}
+  .box{background:#f6f3e8;border-left:4px solid #c8952e;padding:10px 14px;margin:16px 0}
+  a{color:#0b6b62}
+  @media (prefers-color-scheme:dark){
+    body{background:#0a0c12;color:#e6e9ef}
+    h2{border-top-color:#2a3140}
+    th{background:#151a24}
+    th,td{border-color:#2a3140}
+    .box{background:#1e2430}
+    .meta{color:#9aa3b2}
+    a{color:#4fd1c5}
+  }
+  @media (max-width:560px){table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{margin-bottom:12px;border:1px solid #d5d9e0}td{border:0;border-bottom:1px solid #e3e6ec}}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Keyp Privacy Notice</h1>
+<p class="meta">App: Keyp (Android) &middot; Last updated: 6 October 2026 &middot; Applies to Keyp version 0.5 and later</p>
+
+<div class="box">
+<p><strong>The short version.</strong> Keyp is a zero-knowledge vault. Everything you put in it is locked on your phone with your master password. We cannot read it. We cannot reset your master password. We do not run ads, we do not track you (see section 4 for one technical detail), and we never sell your data. The only things we hold, and only if you switch on the optional cloud features, are your email address, locked (encrypted) backup data, and a few details for the keeper alarm. This notice explains each one.</p>
+</div>
+
+<h2>1. Who is responsible</h2>
+<p>This notice is given under the Protection of Personal Information Act 4 of 2013 (POPIA).</p>
+<table>
+<tr><th>Responsible party</th><td>Corrie Vermaak, sole operator of Keyp, South Africa</td></tr>
+<tr><th>Information Officer</th><td>Corrie Vermaak</td></tr>
+<tr><th>Information Regulator registration number</th><td>[Information Regulator registration number]</td></tr>
+<tr><th>Contact</th><td><a href="mailto:customedge.sa@gmail.com">customedge.sa@gmail.com</a></td></tr>
+</table>
+<p>Write to this address for any privacy question or request. We will reply in plain language.</p>
+
+<h2>2. What stays only on your phone</h2>
+<p>If you never turn on cloud backup or the keeper alarm, nothing you store in Keyp ever leaves your phone. This covers:</p>
+<ul>
+<li>passwords and logins;</li>
+<li>the built-in 2FA (TOTP) codes and their setup keys;</li>
+<li>documents such as ID, wills, insurance policies, photos and PDFs;</li>
+<li>notes and checklists;</li>
+<li>your &ldquo;When I'm gone&rdquo; plan, contacts per step, and the pinned apps in Launchpad;</li>
+<li>your two halves of the Legacy Key.</li>
+</ul>
+<p>All of this is encrypted on the phone with a key made from your master password (Argon2id key derivation, AES-256-GCM encryption). The master password is never stored and never sent anywhere. The developer has no way to read this data or to reset your master password.</p>
+
+<h2>3. What we process if you turn on the optional cloud features</h2>
+<p>Cloud features are off until you create a cloud account inside the app. They use a service called Supabase (see section 6).</p>
+<table>
+<thead><tr><th>What</th><th>Why</th><th>Can we read it?</th></tr></thead>
+<tbody>
+<tr><td><strong>Email address</strong> you use for the cloud account, and your cloud account password (kept by Supabase's sign-in service in hashed form)</td><td>To create and sign you in to your cloud account, and to contact you about it</td><td>We can see the email address. We cannot see your password.</td></tr>
+<tr><td><strong>Encrypted backup</strong>: your records, document files, a random salt and your wrapped vault key</td><td>To restore your vault on a new phone</td><td>No. It is ciphertext. It opens only with your master password, which we never have.</td></tr>
+<tr><td><strong>Keeper alarm</strong> (only if you switch it on): the display name you chose, your last check-in time, the number of check-in and grace days, the time your partner started a countdown (if they did), a one-way fingerprint of the keeper code, and one encrypted half of your Legacy Key</td><td>To run the countdown and release the vault to your partner only after it ends</td><td>We can see the name and the times. We cannot read the Legacy Key half: it is sealed with a key made from the keeper code, which we do not have.</td></tr>
+<tr><td><strong>Technical records</strong> kept by Supabase when you use the cloud (for example sign-in times and IP addresses in service logs)</td><td>Running and securing the service</td><td>Held by Supabase under its own terms (section 6)</td></tr>
+</tbody>
+</table>
+<p>Your partner (the &ldquo;keeper&rdquo;) does not need a cloud account. They hold a keeper code in their own Keyp app. When they start a countdown, we record the time. Nothing else about the partner is sent to us.</p>
+<p>Our legal grounds under POPIA are your consent (you switch the features on yourself), and what is needed to give you the service you asked for. You can withdraw consent at any time by deleting your cloud account (see our <a href="account-deletion.html">account deletion page</a>).</p>
+
+<h2>4. What we do NOT collect</h2>
+<ul>
+<li>No advertising, no ad identifiers, no ad networks.</li>
+<li>No analytics, tracking or crash-reporting software of our own.</li>
+<li>No location, contacts, SMS or microphone data.</li>
+<li>No master password, no vault key, and no plain-text passwords, documents, notes or 2FA setup keys.</li>
+<li>No selling or renting of data, ever.</li>
+<li>No access to your payment card details. Payments run through Google Play.</li>
+</ul>
+<p>One honest detail: Keyp uses Google's ML Kit code for text recognition and QR scanning. It runs on your phone. Google documents that ML Kit may send technical diagnostics to Google (such as app name and version, phone model and Android version, a per-installation identifier that is not meant to identify you, performance numbers and error codes). Your photos, scanned text and QR contents are not part of that. See section 6.</p>
+
+<h2>5. Permissions the app asks for</h2>
+<ul>
+<li><strong>Camera</strong>: to scan documents, to scan a login screen for text, and to scan 2FA QR codes. Photos are read on the phone. For a login-screen scan, the photo is deleted after the text is read.</li>
+<li><strong>Biometrics</strong>: to unlock with your fingerprint or face. Your fingerprint or face data never reaches Keyp. Android keeps it.</li>
+<li><strong>Internet</strong>: only for the optional cloud backup and keeper alarm.</li>
+<li><strong>Notifications</strong>: so Keyp can show you an alert on your phone about the partner countdown. Never for marketing. Android 13 and later asks you first.</li>
+<li><strong>Package visibility for banking apps</strong>: so the Launchpad can show and open the banking apps you pin. Keyp does not collect or send a list of your apps anywhere.</li>
+</ul>
+<p>Keyp blocks screenshots and screen recording inside the app, and hides the app preview in the recent-apps list.</p>
+
+<h2>6. Who else is involved</h2>
+<table>
+<thead><tr><th>Party</th><th>Role</th><th>What they handle</th></tr></thead>
+<tbody>
+<tr><td><strong>Supabase</strong> (Supabase, Inc.; <a href="https://supabase.com/privacy">supabase.com/privacy</a>)</td><td>Operator. It stores data for us and only on our instructions.</td><td>Only if you use cloud features: email address, encrypted backup, keeper alarm details. Our project is hosted in the EU (AWS eu-west-1, Ireland).</td></tr>
+<tr><td><strong>Google Play</strong> (Google LLC)</td><td>Distributes the app and handles subscription payments and billing</td><td>Your payment details and purchase records stay with Google. We only learn whether a subscription is active. Governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</td></tr>
+<tr><td><strong>Google ML Kit</strong> (on-device)</td><td>Software library built into the app</td><td>Reads text and QR codes on your phone. May send the technical diagnostics described in section 4. See <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit data disclosure</a>.</td></tr>
+</tbody>
+</table>
+<p>We do not share your personal information with anyone else, except where the law forces us to (for example a valid court order). Because vault data is encrypted so that only you can open it, we could not hand over its contents even if asked.</p>
+
+<h2>7. Sending data outside South Africa</h2>
+<p>If you use cloud features, your encrypted backup and account details are stored on servers in the European Union (Ireland), and Supabase is a company based in the United States. This is a transfer of personal information across the South African border (POPIA section 72). We rely on these safeguards: the EU's data protection law (GDPR) is substantially similar to POPIA; Supabase is bound by a data processing agreement; and the content is end-to-end encrypted before it leaves your phone, so it is unreadable to anyone but you. By turning on cloud features you consent to this transfer. If you do not want it, do not turn them on. Keyp works fully without them.</p>
+
+<h2>8. How long we keep it</h2>
+<ul>
+<li><strong>On your phone:</strong> until you delete the vault or uninstall Keyp. We cannot reach it.</li>
+<li><strong>Cloud account and encrypted backup:</strong> until you delete your cloud account. Deleting the account removes the backup and the keeper alarm with it.</li>
+<li><strong>Keeper alarm details:</strong> until you turn the alarm off or delete your cloud account.</li>
+<li><strong>Supabase service logs and routine backup copies:</strong> kept by Supabase for its own short, standard periods and then removed. We do not keep our own copies.</li>
+<li><strong>Emails to us:</strong> kept only as long as needed to deal with your request, or as the law requires.</li>
+</ul>
+<p>Cloud backup does not remove records that you deleted on your phone. A deleted item may stay in the cloud copy until you back up again or delete the cloud account. If you have the keeper alarm on, your partner could also receive such an item.</p>
+
+<h2>9. How we protect it</h2>
+<ul>
+<li>Zero-knowledge design: encryption and decryption happen only on your phone. Argon2id turns your master password into a key. Each record is sealed with AES-256-GCM.</li>
+<li>Cloud data is protected in transit by HTTPS, and each user can only reach their own rows (row-level security in the database).</li>
+<li>The keeper alarm releases data only when the server clock says the countdown is over, and the encrypted half of the Legacy Key still needs the keeper's code and the paper half to open.</li>
+<li>Auto-lock after inactivity; screens close when the vault locks; screenshots blocked; copied passwords are cleared from the clipboard after a short time.</li>
+</ul>
+<p>No security is perfect. Zero-knowledge does <strong>not</strong> protect you against malware on a phone that is already unlocked, or against typing your master password into a fake screen. Use a strong master password that you do not use anywhere else.</p>
+<p><strong>Important:</strong> because we cannot read your data, we <strong>cannot recover or reset a lost master password</strong>. If you lose it and have no copy of your Legacy Key, your vault cannot be opened by anyone.</p>
+
+<h2>10. Your rights under POPIA</h2>
+<p>You may, at any time:</p>
+<ul>
+<li><strong>Ask what we hold</strong> about you and get a copy (access);</li>
+<li><strong>Ask us to correct</strong> information that is wrong or out of date;</li>
+<li><strong>Ask us to delete</strong> your information. In the app: Settings &rarr; Cloud sync &rarr; Delete my cloud account. Or email us (see our <a href="account-deletion.html">account deletion page</a>);</li>
+<li><strong>Object</strong> to our processing, or withdraw your consent. This does not affect what we did before you withdrew;</li>
+<li>Ask us to stop the keeper alarm, or switch it off yourself in the Legacy tab.</li>
+</ul>
+<p>To keep your account safe, we will ask you to write from the email address on the cloud account. We cannot show you the contents of your vault, because we cannot read it. Your own phone shows it to you, and you can export an encrypted backup from Settings.</p>
+<p>We will reply within 30 days, and usually sooner.</p>
+
+<h3>Complaints</h3>
+<p>If you are not happy with how we handled your information, please tell us first. You also have the right to complain to the Information Regulator (South Africa):</p>
+<table>
+<tr><th>Address</th><td>Woodmead North Office Park, 54 Maxwell Drive, Woodmead, Johannesburg, 2191</td></tr>
+<tr><th>Telephone</th><td>010 023 5200 (toll free: 0800 017 160)</td></tr>
+<tr><th>POPIA complaints</th><td><a href="mailto:POPIAComplaints@inforegulator.org.za">POPIAComplaints@inforegulator.org.za</a></td></tr>
+<tr><th>General enquiries</th><td><a href="mailto:enquiries@inforegulator.org.za">enquiries@inforegulator.org.za</a></td></tr>
+<tr><th>Website</th><td><a href="https://inforegulator.org.za">inforegulator.org.za</a></td></tr>
+</table>
+<p class="meta">Regulator details checked against inforegulator.org.za on 6 October 2026. They may change.</p>
+
+<h2>11. Children</h2>
+<p>Keyp is for people aged 18 and over. We do not knowingly process personal information of anyone under 18. If you believe a child has used the cloud features, email us and we will delete the account.</p>
+
+<h2>12. If something goes wrong (breach)</h2>
+<p>If we have reasonable grounds to believe that someone without authority has accessed personal information we hold, we will tell the Information Regulator and the people affected as soon as reasonably possible, as POPIA section 22 requires. We will say what happened, what information may be involved, and what you should do. Vault contents are encrypted, so the main information at risk would be cloud account email addresses and keeper alarm names and times.</p>
+
+<h2>13. Changes to this notice</h2>
+<p>We will update this notice when the app or the law changes. The date at the top shows the latest version. For a change that matters (for example a new kind of data), we will tell you in the app before it starts.</p>
+
+<h2>14. Contact</h2>
+<p>Corrie Vermaak (Information Officer)<br>
+Email: <a href="mailto:customedge.sa@gmail.com">customedge.sa@gmail.com</a><br>
+South Africa</p>
+
+</main>
+</body>
+</html>
